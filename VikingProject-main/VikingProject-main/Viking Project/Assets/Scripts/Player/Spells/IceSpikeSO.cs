@@ -12,7 +12,7 @@ public class IceSpikeSO : SpellSO {
     public void IceSpike(Transform origin) {
         // Instantiate ability prefab at the specified position
         GameObject spell = Instantiate(spellPrefab, origin.position, origin.rotation);
-        spell.GetComponent<Rigidbody>().velocity = origin.forward * spellSpeed;
+        spell.GetComponent<Rigidbody>().linearVelocity = origin.forward * spellSpeed;
         Destroy(spell, spellLife);
     }
 
