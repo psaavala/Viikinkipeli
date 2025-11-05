@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: -199063091410215100}
+  walkSpeed: 5
+  sprintSpeed: 7
 --- !u!114 &7864305396702981775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +193,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 53890302-b6e8-4a2c-9866-37b936c61b37
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick]
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -207,7 +209,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 34794ddf-ab8e-4bf4-b3b4-f9af185c921a
-    m_ActionName: Player/Attack[/Mouse/leftButton,/DualShock4GamepadHID/rightTrigger]
+    m_ActionName: 'Player/Attack[/Mouse/leftButton,/DualShock4GamepadHID/rightTrigger]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -223,7 +225,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 9535e324-395a-436a-9e4e-73efb25ae231
-    m_ActionName: Player/Block[/Mouse/rightButton,/DualShock4GamepadHID/leftTrigger]
+    m_ActionName: 'Player/Block[/Mouse/rightButton,/DualShock4GamepadHID/leftTrigger]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -239,7 +241,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 147f2ae9-5ae9-49a6-abef-82ac5b13c807
-    m_ActionName: Player/Interact[/DualShock4GamepadHID/buttonWest,/Keyboard/e]
+    m_ActionName: 'Player/Interact[/DualShock4GamepadHID/buttonWest,/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -255,7 +257,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 68df6850-4bf3-4c2a-b5ef-1e153909b908
-    m_ActionName: Player/Look[/Mouse/position]
+    m_ActionName: 'Player/Look[/Mouse/position]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -271,7 +273,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 9c3afd22-bb2f-4393-8f3c-44a2ca7d5ea9
-    m_ActionName: Player/FightMode[/Keyboard/leftCtrl]
+    m_ActionName: 'Player/FightMode[/Keyboard/leftCtrl]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -287,7 +289,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 7849e2a7-a2f4-42ab-9511-e2fbfaf26dc5
-    m_ActionName: Player/Spell 1[/Keyboard/g,/DualShock4GamepadHID/buttonEast]
+    m_ActionName: 'Player/Spell 1[/Keyboard/g,/DualShock4GamepadHID/buttonEast]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -303,7 +305,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 7534873c-300d-444e-99cf-a7c8607a7580
-    m_ActionName: Player/Heal[/Keyboard/q,/DualShock4GamepadHID/buttonNorth]
+    m_ActionName: 'Player/Heal[/Keyboard/q,/DualShock4GamepadHID/buttonNorth]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
@@ -319,11 +321,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 35d94e53-a04c-42d0-aa63-7bc910e78096
-    m_ActionName: Player/TogglePause[/Keyboard/escape,/DualShock4GamepadHID/start]
+    m_ActionName: 'Player/TogglePause[/Keyboard/escape,/DualShock4GamepadHID/start]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: aaaeeacb-8ed2-4003-a7fb-82bc2b0c56af
-    m_ActionName: Menu Controls/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/dpad]
+    m_ActionName: 'Menu Controls/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/dpad]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: bc1e4c85-d346-486e-937d-8be1ca9c72d3
@@ -374,7 +376,6 @@ CharacterController:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -490,6 +491,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2283416465130588224, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768268128605588966, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 3026834479194564179, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -497,6 +506,18 @@ PrefabInstance:
     - target: {fileID: 3026834479194564179, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128874887814674670, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -447
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128874887814674670, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 443
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284365904026976167, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 4012462749906927533, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
       propertyPath: m_AnchorMax.x
@@ -586,13 +607,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4937658592828320559, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018344754775185945, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -168
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197543372683367058, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847295861792317069, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7594649528244567619, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
       propertyPath: playerInteract
       value: 
       objectReference: {fileID: 7864305396702981775}
+    - target: {fileID: 7984163286439037288, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402398388567786563, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8465217408279219975, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
       propertyPath: m_Name
       value: PlayerGUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689066357290390674, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805199255991301465, guid: e37ce13e28b46354aae24dbbb4e50276, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

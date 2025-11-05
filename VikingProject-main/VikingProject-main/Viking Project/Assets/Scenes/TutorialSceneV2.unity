@@ -3159,7 +3159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a983f3344a1d24fb995fc33d2096da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinimapFollow
-  player: {fileID: 421772239}
+  player: {fileID: 0}
   height: 10
   rotateWithPlayer: 0
 --- !u!81 &269253136
@@ -4262,7 +4262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.4595642, y: -1.6060791}
+  m_AnchoredPosition: {x: 2, y: 1.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352561891
@@ -4277,7 +4277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca53f04a71b58e04795f2d333cf6f757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerIconFollow
-  player: {fileID: 0}
+  player: {fileID: 421772239}
 --- !u!114 &352561892
 MonoBehaviour:
   m_ObjectHideFlags: 0

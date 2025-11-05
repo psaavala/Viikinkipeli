@@ -1,20 +1,42 @@
-using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
 using UnityEngine;
 
-public class PlayerSceneManager : MonoBehaviour {
-    [SerializeField] private GameObject playerPrefab; // Reference to the player data
+public class PlayerSceneManager : MonoBehaviour
+{
+    [SerializeField] private GameObject playerPrefab;
     public Transform playerSpawnPoint;
-    private GameObject playerInstance; // Reference to the instantiated player object
 
-    // Made for spawning player to level on scene change
-    private void Start() {
-        if (playerInstance == null && playerPrefab != null) {
-            // Instantiate the player prefab
-            playerInstance = Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation);
-            // Camera follow the instantiated object
-            Camera.main.GetComponent<CinemachineVirtualCamera>().Follow = playerInstance.transform;
+    private static PlayerSceneManager instance;
+    private static GameObject playerInstance;
+
+    void Awake()
+    {
+        // make this manager a singleton
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject); // destroy duplicates of this manager
+            return;
         }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject); // survive across scenes
+    }
+
+    private void Start()
+    {
+        if (playerInstance != null)
+        {
+            // player already exists → just move him to new spawn point
+            playerInstance.transform.position = playerSpawnPoint.position;
+            playerInstance.transform.rotation = playerSpawnPoint.rotation;
+
+            Camera.main.GetComponent<CinemachineVirtualCamera>().Follow = playerInstance.transform;
+            return;
+        }
+
+        // first time → create the player
+        playerInstance = Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation);
+
+        Camera.main.GetComponent<CinemachineVirtualCamera>().Follow = playerInstance.transform;
     }
 }
