@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -43,5 +44,27 @@ public class PauseMenu : MonoBehaviour
     {
         settingsPanel.SetActive(false);
         pauseMenuUI.SetActive(true);
+    }
+public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.sceneLoaded += OnSceneLoaded; // tilaa eventtiin
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Etsi uusi pelaaja ja kytke kamera siihen
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        CinemachineVirtualCamera cam = FindObjectOfType<CinemachineVirtualCamera>();
+
+        if (cam != null && player != null)
+        {
+            cam.Follow = player.transform;
+            cam.LookAt = player.transform;
+        }
+
+        // poista eventti, ettei se kerry joka restartilla
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
