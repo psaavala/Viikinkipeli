@@ -30,13 +30,17 @@ public class SelectorUIManager : MonoBehaviour
     public TextMeshProUGUI questHeader;
     public TextMeshProUGUI questDescription;
 
-    [Header("Shop UI")]
+    [Header("Shop UI (shop updates these)")]
     public GameObject shopScreen;
-    public TextMeshProUGUI playerMoneyScreenText;
-    public TextMeshProUGUI potionCountText;
+    public TextMeshProUGUI playerMoneyScreenText; // updated in Shop.cs
+    public TextMeshProUGUI potionCountText;       // updated in Shop.cs
 
     [Header("Player HUD")]
     public GameObject inGameHud;
+
+    // HUD label that always shows current potion count
+    [Tooltip("Bind a TMP text on your HUD that should always display health potion count.")]
+    public TextMeshProUGUI hudPotionCountText;
 
     [Header("Active UI element")]
     public GameObject activeUI;
@@ -47,13 +51,21 @@ public class SelectorUIManager : MonoBehaviour
     // True if a gameplay UI is currently open
     public bool IsAnyUIOpen => activeUI != null && activeUI.activeSelf;
 
+    void Start()
+    {
+        // Initialize HUD text at startup
+        UpdateHudPotionCount();
+    }
 
     void Update()
     {
-        // Escape closes current UI
+        // Always keep HUD potion label synced to PlayerData
+        UpdateHudPotionCount();
+
+        // Escape closes current non-pause UI
         if (Input.GetKeyDown(KeyCode.Escape) && IsAnyUIOpen)
         {
-            EatEscapeThisFrame = true;   //Prevent PauseMenu from seeing the same Escape press
+            EatEscapeThisFrame = true;   // Prevent PauseMenu from seeing the same Escape press
             SelectorBackButton();
         }
     }
@@ -64,7 +76,6 @@ public class SelectorUIManager : MonoBehaviour
         EatEscapeThisFrame = false;
     }
 
-
     // Universal UI toggle used by all screens
     public void ToggleScreen(GameObject selectorUI)
     {
@@ -74,7 +85,7 @@ public class SelectorUIManager : MonoBehaviour
         if (nextActiveState)
         {
             // Opening a UI
-            inGameHud.SetActive(false);
+            if (inGameHud != null) inGameHud.SetActive(false);
             activeUI = selectorUI;
             Time.timeScale = 0f;
         }
@@ -84,7 +95,7 @@ public class SelectorUIManager : MonoBehaviour
             if (activeUI == selectorUI)
                 activeUI = null;
 
-            inGameHud.SetActive(true);
+            if (inGameHud != null) inGameHud.SetActive(true);
             Time.timeScale = 1f;
         }
     }
@@ -98,10 +109,27 @@ public class SelectorUIManager : MonoBehaviour
         }
     }
 
-
+    // Legacy helper (kept in case other scripts call it)
     public void TogglePlayerHUD()
     {
+        if (inGameHud == null) return;
         bool isActive = inGameHud.activeSelf;
         inGameHud.SetActive(!isActive);
+    }
+
+    // Update the HUD potion count from PlayerData
+    private void UpdateHudPotionCount()
+    {
+        if (hudPotionCountText == null) return;
+
+        // Use PlayerData as the single source of truth
+        int potions = 0;
+        if (PlayerData.Instance != null)
+        {
+            potions = PlayerData.Instance.healthPotions;
+        }
+
+        hudPotionCountText.text = potions.ToString();
+        
     }
 }
