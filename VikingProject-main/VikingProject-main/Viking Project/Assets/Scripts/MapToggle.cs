@@ -15,6 +15,8 @@ public class MapToggle : MonoBehaviour
     public GameObject playerGUI; 
     // The object that holds your minimap camera and UI
 
+    public PlayerInteract playerInteract;
+
     private bool mapOpen = false;
 
     void Start()
@@ -45,5 +47,7 @@ public class MapToggle : MonoBehaviour
         if (minimapRoot) minimapRoot.SetActive(!mapOpen);
         if (selectorUI) selectorUI.SetActive(!mapOpen);
         if (playerGUI) playerGUI.SetActive(!mapOpen);
+
+        if (playerInteract) playerInteract.enabled = !mapOpen;
     }
 }

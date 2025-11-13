@@ -51,6 +51,6 @@ public class MinimapFollow : MonoBehaviour
         if (rotateWithPlayer)
             transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
         else
-            transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            transform.rotation = Quaternion.Euler(90f, 45f, 0f);
     }
 }
