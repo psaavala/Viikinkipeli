@@ -39,9 +39,6 @@ public class GameManager : MonoBehaviour {
             case GameState.ReadyToLeave:
                 portal.gameObject.SetActive(true);
                 break;
-            case GameState.GameOver:
-                StartCoroutine(LoadLevelAsync("HomeHubScene"));
-                break;
         }
     }
     private void OnEnable() {
@@ -57,6 +54,7 @@ public class GameManager : MonoBehaviour {
     }
     void OnPlayerDeath() {
         gameState = GameState.GameOver;
+        StartCoroutine(LoadLevelAsync("HomeHubScene"));
     }
     void OnQuestActivated() {
         gameState = GameState.QuestActive;
