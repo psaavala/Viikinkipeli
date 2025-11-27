@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c11d0dd99248440a710e364ee0626f, type: 3}
   m_Name: Demon
   m_EditorClassIdentifier: Assembly-CSharp::NPCStatsSO
-  maxHealth: 200
+  maxHealth: 175
   armor: 0
-  minDamage: 70
-  maxDamage: 95
-  movementSpeed: 2
-  attackCooldown: 2.5
-  attackRange: 2.1
+  minDamage: 50
+  maxDamage: 55
+  movementSpeed: 2.3
+  attackCooldown: 1.7
+  attackRange: 1.8
   aggroRange: 10
-  coinDrop: 10
+  coinDrop: 5
