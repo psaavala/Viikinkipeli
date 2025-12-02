@@ -1393,6 +1393,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4465670722752727180, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5073117814891500174, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -168
@@ -1461,6 +1465,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 8887339163261000709, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
     - {fileID: 8599826762612100308, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+    - {fileID: 8211374527280362214, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+    - {fileID: 4063420214993573482, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+    - {fileID: 2469325709371783091, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+    - {fileID: 5931892894717019843, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4494274606926571505, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
       insertIndex: 1
@@ -3825,8 +3833,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.8784314, g: 0.8560178, b: 0.73333335, a: 1}
-  m_Intensity: 1.2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
