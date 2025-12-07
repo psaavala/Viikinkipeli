@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889bb03108ea029428ed929c3c55e840, type: 3}
+  m_Name: Double Headed Axe
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
+  prefab: {fileID: 3076137825401183327, guid: f6be0cee416226840802f5a109d3031f, type: 3}
+  objectName: Double Headed Axe
+  minDamage: 45
+  maxDamage: 50
+  attackSpeed: 1.5
+  hitRange: 2.5
+  blockingPower: 2.5
+  twoHanded: 0
