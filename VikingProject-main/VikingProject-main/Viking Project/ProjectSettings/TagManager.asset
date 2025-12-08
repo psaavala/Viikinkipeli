@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Enemy
   - FxTemporaire
+  - Skeleton
   layers:
   - Default
   - TransparentFX

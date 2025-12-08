@@ -185,7 +185,13 @@ public class EnemyNpc : QuestItem {
         if (SlimeKillTracker.Instance != null)
         {
             SlimeKillTracker.Instance.SlimeDied(gameObject);
-        }   
+        }
+
+        // NEW: Skeleton tracker — toimii vain skeleton-tägillä
+        if (CompareTag("Skeleton") && SkeletonKillTracker.Instance != null)
+        {
+            SkeletonKillTracker.Instance.SkeletonDied(gameObject);
+        }
 
         Debug.Log("NPC died");
         npcAlive = false;
