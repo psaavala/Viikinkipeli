@@ -3287,6 +3287,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 696347899165510435, guid: 1e0c70dbd114d9040a714b370ba79ddf, type: 3}
+      propertyPath: sceneName
+      value: WinterScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 696347899165510435, guid: 1e0c70dbd114d9040a714b370ba79ddf, type: 3}
+      propertyPath: interactText
+      value: Back to Jotunheimr
+      objectReference: {fileID: 0}
     - target: {fileID: 1830296104717274086, guid: 1e0c70dbd114d9040a714b370ba79ddf, type: 3}
       propertyPath: m_Name
       value: EnterPortal
