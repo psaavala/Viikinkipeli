@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c11d0dd99248440a710e364ee0626f, type: 3}
   m_Name: FrostGiant
   m_EditorClassIdentifier: Assembly-CSharp::NPCStatsSO
-  maxHealth: 500
+  maxHealth: 450
   armor: 1
   minDamage: 65
   maxDamage: 75
-  movementSpeed: 1
+  movementSpeed: 1.6
   attackCooldown: 2.2
-  attackRange: 2.71
-  aggroRange: 12
+  attackRange: 2.6
+  aggroRange: 9
   coinDrop: 20
